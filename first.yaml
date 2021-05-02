@@ -1,0 +1,14 @@
+kind: Pod ## kubectl api-resources
+apiVersion: v1 ## kubectl explain Pod
+metadata:
+  name: mypod
+  labels: 
+    app: web
+    env: dev
+spec: 
+  containers:
+    - name: cont1
+      image: ngnix
+      ports: 
+        - containerPort: 80
+        
