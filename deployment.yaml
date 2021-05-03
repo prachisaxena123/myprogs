@@ -1,0 +1,20 @@
+kind: Deployment ## kubectl api-resources
+apiVersion: apps/v1 ## kubectl explain deployment
+metadata:
+   name: mydeploy
+spec:
+   replicas: 3
+   selector: 
+      matchLabels:
+        app: myapp
+   template:
+     metadata: 
+        name: mypod
+        labels:
+          app: myapp
+     spec:
+       containers:
+         - name: cont1
+           image: lerndevops/samplejavaapp
+           ports: 
+             - containerPort: 8080
